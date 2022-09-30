@@ -92,11 +92,14 @@ const createCard = (book) => {
   div.classList.add("card");
 
   let overview = book.overview;
+  
+  shortOverview = overview.slice(0,58);
 
+  // console.log(book.image)
   div.innerHTML = `
   <div class="image-container">
     <img
-      src="${book.Image}"
+      src="${book.image}"
       alt=""
     />
     <div class="button-container">
@@ -107,7 +110,7 @@ const createCard = (book) => {
   <div class="info-container">
     <h1>${book.name}</h1>
     <p>
-      ${overview}
+      ${shortOverview}...
     </p>
   </div>
 
